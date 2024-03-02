@@ -32,19 +32,6 @@ emitReport = async(e) => {
  return "reject";
 }
 
-// convert string to hex
-function stringToHex(str) {
-  let hex = "";
-  for (let i = 0; i < str.length; i++) {
-    const charCode = str.charCodeAt(i).toString(16);
-    hex += charCode.padStart(2, '0'); // Ensure each byte is represented by two characters
-  }
-  return `0x${hex}`;
-}
-
-function dec2Hex(dec) {
-  return `0x${Math.abs(dec).toString(16)}`;
-}
 
 function numberToHex(number) {
   const bigNumber = ethers.toBeHex(number);
@@ -85,8 +72,6 @@ async function handle_advance(data) {
   } catch(e) {
     console.log(e);
   }
-
-
 
 
   return "accept";
